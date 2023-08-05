@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UserModel: Decodable {
+public struct UserModel: Decodable, Equatable {
     public let id: String?
     public let username: String?
     public let name: NameModel?
@@ -27,5 +27,8 @@ public struct UserModel: Decodable {
         self.email = email
         self.profilePicture = profilePicture
         self.phone = phone
+    }
+    public static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+        return lhs.id == rhs.id
     }
 }

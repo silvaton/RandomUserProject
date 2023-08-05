@@ -35,15 +35,29 @@ struct UserInfoListView: View {
                     Text(viewModel.errorMessage)
                         .foregroundColor(.red)
                 } else {
-                    List(filteredUsers, id: \.id) { user in
-                        Text(user.name?.firstName ?? "")
-                     }
+                    List {
+                        ForEach(filteredUsers, id: \.id) { user in
+                            Text(user.name?.firstName ?? "")
+                        }
+                        .onDelete(perform: onDelete)
+                    }
                 }
             }
         }
         .padding()
         .onAppear{
             viewModel.fetchData()
+        }
+    }
+    
+    private func onDelete(at offsets: IndexSet) {
+        offsets.forEach { index in
+            if index < filteredUsers.count {
+                let userToDelete = filteredUsers[index]
+                if let originalIndex = viewModel.users.firstIndex(of: userToDelete) {
+                    viewModel.removeUser(at: originalIndex)
+                }
+            }
         }
     }
 }

@@ -36,8 +36,11 @@ class UserInfoListViewModel: ObservableObject {
                     self.errorMessage = "Unknown Error"
                 }
             }
-    
         }
+    }
+    
+    func removeUser(at Index: Int) {
+        users.remove(at: Index)
     }
 }
 
