@@ -9,9 +9,24 @@ import SwiftUI
 
 struct UserInfoListView: View {
     @StateObject private var viewModel = UserInfoListViewModel()
+    @State private var searchText = ""
+    
+    var filteredUsers: [UserModel] {
+        if searchText.isEmpty {
+            return viewModel.users
+        } else {
+            return viewModel.users.filter {
+                $0.name?.firstName?.localizedCaseInsensitiveContains(searchText) == true ||
+                $0.name?.lastName?.localizedCaseInsensitiveContains(searchText) == true ||
+                $0.email?.localizedCaseInsensitiveContains(searchText) == true
+            }
+        }
+    }
     
     var body: some View {
         VStack {
+            SearchBarView(searchText: $searchText)
+            
             if viewModel.isLoading {
                 ProgressView("Loading...")
                     .padding()
@@ -20,7 +35,7 @@ struct UserInfoListView: View {
                     Text(viewModel.errorMessage)
                         .foregroundColor(.red)
                 } else {
-                    List(viewModel.users, id: \.id) { user in
+                    List(filteredUsers, id: \.id) { user in
                         Text(user.name?.firstName ?? "")
                      }
                 }

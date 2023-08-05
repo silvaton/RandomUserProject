@@ -24,6 +24,7 @@
 		3CA4C6392A7E80BB00CD3426 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3CA4C6382A7E80BB00CD3426 /* Alamofire */; };
 		3CA4C63C2A7E81FA00CD3426 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C63B2A7E81FA00CD3426 /* Network.swift */; };
 		3CA4C6442A7EA54800CD3426 /* UserInfoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C6432A7EA54800CD3426 /* UserInfoListViewModel.swift */; };
+		3CA4C6462A7EADE800CD3426 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C6452A7EADE800CD3426 /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3CA4C6332A7E785E00CD3426 /* LoginDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDto.swift; sourceTree = "<group>"; };
 		3CA4C63B2A7E81FA00CD3426 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3CA4C6432A7EA54800CD3426 /* UserInfoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoListViewModel.swift; sourceTree = "<group>"; };
+		3CA4C6452A7EADE800CD3426 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				3CA4C60E2A7E533F00CD3426 /* UserInfoListView.swift */,
 				3CA4C6432A7EA54800CD3426 /* UserInfoListViewModel.swift */,
+				3CA4C6452A7EADE800CD3426 /* SearchBarView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				3CA4C62B2A7E682E00CD3426 /* Mapper.swift in Sources */,
 				3CA4C60D2A7E533F00CD3426 /* RandomUserProjectApp.swift in Sources */,
 				3CA4C6302A7E6C2500CD3426 /* NameModel.swift in Sources */,
+				3CA4C6462A7EADE800CD3426 /* SearchBarView.swift in Sources */,
 				3CA4C61D2A7E55A900CD3426 /* UserResponseListDto.swift in Sources */,
 				3CA4C62E2A7E6A5C00CD3426 /* UserModel.swift in Sources */,
 				3CA4C6242A7E5C6F00CD3426 /* ImageDto.swift in Sources */,
