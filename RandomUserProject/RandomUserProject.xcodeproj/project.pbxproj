@@ -15,6 +15,11 @@
 		3CA4C61F2A7E560900CD3426 /* UserResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C61E2A7E560900CD3426 /* UserResponseDto.swift */; };
 		3CA4C6222A7E5AF700CD3426 /* NameDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C6212A7E5AF700CD3426 /* NameDto.swift */; };
 		3CA4C6242A7E5C6F00CD3426 /* ImageDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C6232A7E5C6F00CD3426 /* ImageDto.swift */; };
+		3CA4C6292A7E67D600CD3426 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C6282A7E67D600CD3426 /* UserMapper.swift */; };
+		3CA4C62B2A7E682E00CD3426 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C62A2A7E682E00CD3426 /* Mapper.swift */; };
+		3CA4C62E2A7E6A5C00CD3426 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C62D2A7E6A5C00CD3426 /* UserModel.swift */; };
+		3CA4C6302A7E6C2500CD3426 /* NameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C62F2A7E6C2500CD3426 /* NameModel.swift */; };
+		3CA4C6322A7E6D3A00CD3426 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C6312A7E6D3A00CD3426 /* ImageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		3CA4C61E2A7E560900CD3426 /* UserResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseDto.swift; sourceTree = "<group>"; };
 		3CA4C6212A7E5AF700CD3426 /* NameDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDto.swift; sourceTree = "<group>"; };
 		3CA4C6232A7E5C6F00CD3426 /* ImageDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDto.swift; sourceTree = "<group>"; };
+		3CA4C6282A7E67D600CD3426 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
+		3CA4C62A2A7E682E00CD3426 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		3CA4C62D2A7E6A5C00CD3426 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		3CA4C62F2A7E6C2500CD3426 /* NameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModel.swift; sourceTree = "<group>"; };
+		3CA4C6312A7E6D3A00CD3426 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +71,7 @@
 			children = (
 				3CA4C60C2A7E533F00CD3426 /* RandomUserProjectApp.swift */,
 				3CA4C60E2A7E533F00CD3426 /* ContentView.swift */,
+				3CA4C6262A7E65B300CD3426 /* Domain */,
 				3CA4C61A2A7E553300CD3426 /* Data */,
 				3CA4C6102A7E534000CD3426 /* Assets.xcassets */,
 				3CA4C6122A7E534000CD3426 /* Preview Content */,
@@ -101,6 +112,34 @@
 				3CA4C6232A7E5C6F00CD3426 /* ImageDto.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		3CA4C6262A7E65B300CD3426 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3CA4C62C2A7E695700CD3426 /* Model */,
+				3CA4C6272A7E67B300CD3426 /* Mapper */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3CA4C6272A7E67B300CD3426 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				3CA4C6282A7E67D600CD3426 /* UserMapper.swift */,
+				3CA4C62A2A7E682E00CD3426 /* Mapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		3CA4C62C2A7E695700CD3426 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CA4C62D2A7E6A5C00CD3426 /* UserModel.swift */,
+				3CA4C62F2A7E6C2500CD3426 /* NameModel.swift */,
+				3CA4C6312A7E6D3A00CD3426 /* ImageModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,11 +212,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA4C6322A7E6D3A00CD3426 /* ImageModel.swift in Sources */,
+				3CA4C6292A7E67D600CD3426 /* UserMapper.swift in Sources */,
 				3CA4C60F2A7E533F00CD3426 /* ContentView.swift in Sources */,
 				3CA4C6222A7E5AF700CD3426 /* NameDto.swift in Sources */,
 				3CA4C61F2A7E560900CD3426 /* UserResponseDto.swift in Sources */,
+				3CA4C62B2A7E682E00CD3426 /* Mapper.swift in Sources */,
 				3CA4C60D2A7E533F00CD3426 /* RandomUserProjectApp.swift in Sources */,
+				3CA4C6302A7E6C2500CD3426 /* NameModel.swift in Sources */,
 				3CA4C61D2A7E55A900CD3426 /* UserDataDto.swift in Sources */,
+				3CA4C62E2A7E6A5C00CD3426 /* UserModel.swift in Sources */,
 				3CA4C6242A7E5C6F00CD3426 /* ImageDto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
