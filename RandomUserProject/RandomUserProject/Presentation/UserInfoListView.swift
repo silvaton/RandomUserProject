@@ -24,29 +24,44 @@ struct UserInfoListView: View {
     }
     
     var body: some View {
-        VStack {
-            SearchBarView(searchText: $searchText)
-            
-            if viewModel.isLoading {
-                ProgressView("Loading...")
-                    .padding()
-            } else {
-                if !viewModel.errorMessage.isEmpty {
+        NavigationView {
+            VStack {
+                if viewModel.isLoading {
+                    ProgressView("Loading...")
+                        .padding()
+                } else if !viewModel.errorMessage.isEmpty {
                     Text(viewModel.errorMessage)
                         .foregroundColor(.red)
                 } else {
-                    List {
-                        ForEach(filteredUsers, id: \.id) { user in
-                            Text(user.name?.firstName ?? "")
+                    VStack {
+                        SearchBarView(searchText: $searchText)
+                        List {
+                            ForEach(filteredUsers, id: \.id) { user in
+                                Text(user.name?.firstName ?? "")
+                            }
+                            .onDelete(perform: onDelete)
                         }
-                        .onDelete(perform: onDelete)
+                    }
+                    .navigationTitle("Users List")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            EditButton()
+                        }
+                        
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button {
+                                viewModel.fetchData()
+                            } label: {
+                                Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
+                            }
+
+                        }
                     }
                 }
             }
-        }
-        .padding()
-        .onAppear{
-            viewModel.fetchData()
+            .onAppear {
+                viewModel.fetchData()
+            }
         }
     }
     
