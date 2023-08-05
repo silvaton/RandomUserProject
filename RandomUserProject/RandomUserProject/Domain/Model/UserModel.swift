@@ -8,15 +8,21 @@
 import Foundation
 
 public struct UserModel: Decodable {
+    public let id: String?
+    public let username: String?
     public let name: NameModel?
     public let email: String?
     public let profilePicture: ImageModel?
     public let phone: String?
     
-    public init(name: NameModel?,
+    public init(id: String?,
+                username: String?,
+                name: NameModel?,
                 email: String?,
                 profilePicture: ImageModel?,
                 phone: String?) {
+        self.id = id
+        self.username = username
         self.name = name
         self.email = email
         self.profilePicture = profilePicture

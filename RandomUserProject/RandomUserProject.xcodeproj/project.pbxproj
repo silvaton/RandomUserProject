@@ -20,6 +20,7 @@
 		3CA4C62E2A7E6A5C00CD3426 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C62D2A7E6A5C00CD3426 /* UserModel.swift */; };
 		3CA4C6302A7E6C2500CD3426 /* NameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C62F2A7E6C2500CD3426 /* NameModel.swift */; };
 		3CA4C6322A7E6D3A00CD3426 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C6312A7E6D3A00CD3426 /* ImageModel.swift */; };
+		3CA4C6342A7E785E00CD3426 /* LoginDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C6332A7E785E00CD3426 /* LoginDto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		3CA4C62D2A7E6A5C00CD3426 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3CA4C62F2A7E6C2500CD3426 /* NameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModel.swift; sourceTree = "<group>"; };
 		3CA4C6312A7E6D3A00CD3426 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		3CA4C6332A7E785E00CD3426 /* LoginDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				3CA4C6212A7E5AF700CD3426 /* NameDto.swift */,
 				3CA4C6232A7E5C6F00CD3426 /* ImageDto.swift */,
+				3CA4C6332A7E785E00CD3426 /* LoginDto.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				3CA4C60F2A7E533F00CD3426 /* ContentView.swift in Sources */,
 				3CA4C6222A7E5AF700CD3426 /* NameDto.swift in Sources */,
 				3CA4C61F2A7E560900CD3426 /* UserResponseDto.swift in Sources */,
+				3CA4C6342A7E785E00CD3426 /* LoginDto.swift in Sources */,
 				3CA4C62B2A7E682E00CD3426 /* Mapper.swift in Sources */,
 				3CA4C60D2A7E533F00CD3426 /* RandomUserProjectApp.swift in Sources */,
 				3CA4C6302A7E6C2500CD3426 /* NameModel.swift in Sources */,

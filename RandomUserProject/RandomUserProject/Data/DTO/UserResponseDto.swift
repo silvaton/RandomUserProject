@@ -12,6 +12,7 @@ public struct UserResponseDto: Decodable {
     public let email: String?
     public let picture: ImageDto?
     public let phone: String?
+    public let login: LoginDto?
     
     
     private enum CodingKeys: String, CodingKey {
@@ -19,16 +20,19 @@ public struct UserResponseDto: Decodable {
         case email
         case picture
         case phone
+        case login
     }
     
     public init (name: NameDto?,
                  email: String?,
                  picture: ImageDto?,
-                 phone: String?) {
+                 phone: String?,
+                 login:LoginDto?) {
         self.name = name
         self.email = email
         self.picture = picture
         self.phone = phone
+        self.login = login
     }
     
     public init(from decoder: Decoder) throws {
@@ -37,5 +41,6 @@ public struct UserResponseDto: Decodable {
         email = try values.decodeIfPresent(String.self, forKey: .email)
         picture = try values.decodeIfPresent(ImageDto.self, forKey: .picture)
         phone = try values.decodeIfPresent(String.self, forKey: .phone)
+        login = try values.decodeIfPresent(LoginDto.self, forKey: .login)
     }
 }

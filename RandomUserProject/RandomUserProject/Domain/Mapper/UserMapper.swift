@@ -9,7 +9,9 @@ import Foundation
 
 public class UserMapper: Mapper<UserResponseDto, UserModel> {
     public override func mapvalue(response: UserResponseDto) -> UserModel {
-        return UserModel(name: NameModel(firstName: response.name?.first,
+        return UserModel(id: response.login?.uuid,
+                         username: response.login?.username,
+                         name: NameModel(firstName: response.name?.first,
                                          lastName: response.name?.last),
                          email: response.email,
                          profilePicture: ImageModel(largeSize: response.picture?.large,
