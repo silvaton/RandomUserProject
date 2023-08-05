@@ -8,7 +8,7 @@
 import Foundation
 
 open class Mapper<T,U> {
-    open func mapvalue(response: T) -> U {
+    open func mapValue(response: T) -> U {
         fatalError("Subclasses need to implement the `mapValue` method.")
     }
     

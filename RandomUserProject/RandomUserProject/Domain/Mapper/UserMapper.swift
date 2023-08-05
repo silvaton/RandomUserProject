@@ -8,15 +8,23 @@
 import Foundation
 
 public class UserMapper: Mapper<UserResponseDto, UserModel> {
-    public override func mapvalue(response: UserResponseDto) -> UserModel {
-        return UserModel(id: response.login?.uuid,
-                         username: response.login?.username,
-                         name: NameModel(firstName: response.name?.first,
-                                         lastName: response.name?.last),
-                         email: response.email,
-                         profilePicture: ImageModel(largeSize: response.picture?.large,
-                                                    mediumSize: response.picture?.medium,
-                                                    thumbnail: response.picture?.thumbnail),
-                         phone: response.phone)
+    public func mapValue(response: [UserResponseDto]) -> [UserModel]? {
+        var userList = [UserModel]()
+        
+        response.forEach { userInfo in
+            let newUser = UserModel(id: userInfo.login?.uuid,
+                                    username: userInfo.login?.username,
+                                    name: NameModel(firstName: userInfo.name?.first,
+                                                    lastName: userInfo.name?.last),
+                                    email: userInfo.email,
+                                    profilePicture: ImageModel(largeSize: userInfo.picture?.large,
+                                                               mediumSize: userInfo.picture?.medium,
+                                                               thumbnail: userInfo.picture?.thumbnail),
+                                    phone: userInfo.phone)
+            
+            userList.append(newUser)
+        }
+        
+        return userList
     }
 }
