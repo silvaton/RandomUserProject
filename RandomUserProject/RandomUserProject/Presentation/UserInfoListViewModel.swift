@@ -11,10 +11,11 @@ import SwiftUI
 
 class UserInfoListViewModel: ObservableObject {
     @Published var users: [UserModel] = []
+    @Published var blackListedUsersIDs: [String] = []
     @Published var errorMessage: String = ""
     @Published var isLoading = false
     @Published var shouldReloadData = true
-    
+        
     private let network = Network()
     
     func fetchData() {
@@ -66,6 +67,22 @@ class UserInfoListViewModel: ObservableObject {
     
     func removeUser(at Index: Int) {
         users.remove(at: Index)
+    }
+    
+    func isUserBlackListed(userID: String) -> Bool {
+        return blackListedUsersIDs.contains(userID)
+    }
+    
+    func addToBlackList(userID: String) {
+        if !blackListedUsersIDs.contains(userID) {
+            blackListedUsersIDs.append(userID)
+        }
+    }
+    
+    func removeFromBlacklist(userID: String) {
+        if let index = blackListedUsersIDs.firstIndex(of: userID) {
+            blackListedUsersIDs.remove(at: index)
+        }
     }
 }
 
