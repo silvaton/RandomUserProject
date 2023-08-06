@@ -46,18 +46,10 @@ struct UserInfoListView: View {
                                         UserInfoListImageView(user: user,
                                                               isUserBlackListed: viewModel.isUserBlackListed(userID: user.id ?? ""))
                                         VStack(alignment: .leading) {
-                                            HStack {
-                                                Text("Name:")
-                                                Text(user.name?.userFullName ?? "")
-                                            }
-                                            HStack {
-                                                Text("Email:")
-                                                Text(user.email ?? "")
-                                            }
-                                            HStack {
-                                                Text("Phone:")
-                                                Text(user.phone ?? "")
-                                            }
+                                            
+                                            UserListInfoLabelView(labelTitle: "Name", labelContent: user.name?.userFullName ?? "")
+                                            UserListInfoLabelView(labelTitle: "Email", labelContent: user.email ?? "")
+                                            UserListInfoLabelView(labelTitle: "Phone", labelContent: user.phone ?? "")
                                         }
                                     }
                                 }
