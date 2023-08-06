@@ -12,7 +12,7 @@ struct SearchBarView: View {
     
     var body: some View {
         HStack {
-            TextField("Search", text: $searchText)
+            TextField("search_placeholder_title".localized, text: $searchText)
                 .padding(7)
                 .background(Color(.systemGray6))
                 .cornerRadius(8)

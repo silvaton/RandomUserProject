@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  RandomUserProject
+
+  Created by Ton Silva on 6/8/23.
+  
+*/
+
+//General
+"empty_string" = "";
+
+// Error
+"unknown_error_message" = "Unknown Error";
+
+// Search
+"search_placeholder_title" = "Search";
+
+// UserInfoListView
+"user_info_list_view_progress_view_title" = "Loading...";
+"user_info_list_view_name_label_title" = "Name";
+"user_info_list_view_email_label_title" = "Email";
+"user_info_list_view_phone_label_title" = "Phone";
+"user_info_list_view_navigation_title" = "Users List";
+"user_info_list_view_reload_data_button_title" = "Reload";
+"user_info_list_view_reload_data_button_image_title" = "arrow.triangle.2.circlepath";
+
+// UserInfoListImageView
+"user_info_list_image_view_black_listed_icon_title" = "x.circle.fill";
+"user_info_list_image_view_non_black_listed_icon_title" = "checkmark.seal.fill";
+
+// UserDetailsView
+"user_details_view_name_label_title" = "Name";
+"user_details_view_username_label_title" = "Username";
+"user_details_view_email_label_title" = "Email";
+"user_details_view_phone_label_title" = "Phone";
+"user_details_view_navigation_title" = "User Details";
+

@@ -29,7 +29,7 @@ struct UserInfoListView: View {
         NavigationView {
             VStack {
                 if viewModel.isLoading {
-                    ProgressView("Loading...")
+                    ProgressView("user_info_list_view_progress_view_title".localized)
                         .padding()
                 } else if !viewModel.errorMessage.isEmpty {
                     Text(viewModel.errorMessage)
@@ -47,9 +47,12 @@ struct UserInfoListView: View {
                                                               isUserBlackListed: viewModel.isUserBlackListed(userID: user.id ?? ""))
                                         VStack(alignment: .leading) {
                                             
-                                            UserListInfoLabelView(labelTitle: "Name", labelContent: user.name?.userFullName ?? "")
-                                            UserListInfoLabelView(labelTitle: "Email", labelContent: user.email ?? "")
-                                            UserListInfoLabelView(labelTitle: "Phone", labelContent: user.phone ?? "")
+                                            UserListInfoLabelView(labelTitle: "user_info_list_view_name_label_title".localized,
+                                                                  labelContent: user.name?.userFullName ?? "")
+                                            UserListInfoLabelView(labelTitle: "user_info_list_view_email_label_title".localized,
+                                                                  labelContent: user.email ?? "")
+                                            UserListInfoLabelView(labelTitle: "user_info_list_view_phone_label_title".localized,
+                                                                  labelContent: user.phone ?? "")
                                         }
                                     }
                                 }
@@ -59,7 +62,8 @@ struct UserInfoListView: View {
                         }
 
                     }
-                    .navigationTitle("Users List")
+                    .navigationTitle("user_info_list_view_navigation_title".localized)
+                    .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
                             EditButton()
@@ -70,7 +74,8 @@ struct UserInfoListView: View {
                                 viewModel.shouldReloadData = true
                                 viewModel.fetchData()
                             } label: {
-                                Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
+                                Label("user_info_list_view_reload_data_button_title".localized,
+                                      systemImage: "user_info_list_view_reload_data_button_image_title".localized)
                             }
                         }
                     }

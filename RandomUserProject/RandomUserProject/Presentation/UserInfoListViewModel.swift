@@ -12,7 +12,7 @@ import SwiftUI
 class UserInfoListViewModel: ObservableObject {
     @Published var users: [UserModel] = []
     @Published var blackListedUsersIDs: [String] = []
-    @Published var errorMessage: String = ""
+    @Published var errorMessage: String = "empty_string".localized
     @Published var isLoading = false
     @Published var shouldReloadData = true
         
@@ -34,7 +34,7 @@ class UserInfoListViewModel: ObservableObject {
                     if let errorInfo = error as NSError?, let message = errorInfo.userInfo[NSLocalizedDescriptionKey] as? String {
                         self.errorMessage = message
                     } else {
-                        self.errorMessage = "Unknown Error"
+                        self.errorMessage = "unknown_error_message".localized
                     }
                 }
             }
@@ -61,7 +61,7 @@ class UserInfoListViewModel: ObservableObject {
 
         DispatchQueue.main.async {
             self.users = sortedUsers
-            self.errorMessage = ""
+            self.errorMessage = "empty_string".localized
         }
     }
     

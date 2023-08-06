@@ -13,6 +13,8 @@
 		3C9FE25D2A7FF9080045BFEB /* UserInfoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9FE25C2A7FF9080045BFEB /* UserInfoListViewModelTests.swift */; };
 		3C9FE26B2A7FFC910045BFEB /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3C9FE26A2A7FFC910045BFEB /* SDWebImageSwiftUI */; };
 		3C9FE26D2A7FFD110045BFEB /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9FE26C2A7FFD110045BFEB /* MockNetwork.swift */; };
+		3C9FE2722A8008450045BFEB /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9FE2712A8008450045BFEB /* Localizable.swift */; };
+		3C9FE2742A8008700045BFEB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C9FE2732A8008700045BFEB /* Localizable.strings */; };
 		3CA4C60D2A7E533F00CD3426 /* RandomUserProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C60C2A7E533F00CD3426 /* RandomUserProjectApp.swift */; };
 		3CA4C60F2A7E533F00CD3426 /* UserInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C60E2A7E533F00CD3426 /* UserInfoListView.swift */; };
 		3CA4C6112A7E534000CD3426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA4C6102A7E534000CD3426 /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		3C9FE25A2A7FF9080045BFEB /* RandomUserProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUserProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9FE25C2A7FF9080045BFEB /* UserInfoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoListViewModelTests.swift; sourceTree = "<group>"; };
 		3C9FE26C2A7FFD110045BFEB /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
+		3C9FE2712A8008450045BFEB /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		3C9FE2732A8008700045BFEB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3CA4C6092A7E533F00CD3426 /* RandomUserProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUserProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA4C60C2A7E533F00CD3426 /* RandomUserProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserProjectApp.swift; sourceTree = "<group>"; };
 		3CA4C60E2A7E533F00CD3426 /* UserInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoListView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3C9FE26F2A8008100045BFEB /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3C9FE2702A8008230045BFEB /* Extension */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		3C9FE2702A8008230045BFEB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3C9FE2712A8008450045BFEB /* Localizable.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		3CA4C6002A7E533F00CD3426 = {
 			isa = PBXGroup;
 			children = (
@@ -179,8 +199,10 @@
 				3CA4C6262A7E65B300CD3426 /* Domain */,
 				3CA4C61A2A7E553300CD3426 /* Data */,
 				3CA4C6422A7EA4F300CD3426 /* Presentation */,
+				3C9FE26F2A8008100045BFEB /* Utility */,
 				3CA4C6102A7E534000CD3426 /* Assets.xcassets */,
 				3CA4C6122A7E534000CD3426 /* Preview Content */,
+				3C9FE2732A8008700045BFEB /* Localizable.strings */,
 			);
 			path = RandomUserProject;
 			sourceTree = "<group>";
@@ -369,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CA4C6142A7E534000CD3426 /* Preview Assets.xcassets in Resources */,
+				3C9FE2742A8008700045BFEB /* Localizable.strings in Resources */,
 				3CA4C6112A7E534000CD3426 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +414,7 @@
 			files = (
 				3CA4C64D2A7FABF400CD3426 /* UserDetailsView.swift in Sources */,
 				3CA4C63C2A7E81FA00CD3426 /* Network.swift in Sources */,
+				3C9FE2722A8008450045BFEB /* Localizable.swift in Sources */,
 				3CA4C6322A7E6D3A00CD3426 /* ImageModel.swift in Sources */,
 				3CA4C6292A7E67D600CD3426 /* UserMapper.swift in Sources */,
 				3CA4C60F2A7E533F00CD3426 /* UserInfoListView.swift in Sources */,

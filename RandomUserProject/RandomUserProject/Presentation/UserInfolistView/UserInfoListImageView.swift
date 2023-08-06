@@ -17,14 +17,23 @@ struct UserInfoListImageView: View {
         if let imageUrl = user.profilePicture?.defaultImageUrl {
             WebImage(url: URL(string: imageUrl))
                 .resizable()
-                .frame(width: 80,height: 80)
+                .frame(width: Constants.imageWidth,height: Constants.imageHeight)
                 .clipped()
-                .cornerRadius(5)
+                .cornerRadius(Constants.imageCornerRadius)
                 .overlay(alignment:.bottomTrailing) {
-                    Image(systemName: isUserBlackListed ? "x.circle.fill" : "checkmark.seal.fill")
+                    Image(systemName: isUserBlackListed ?
+                          "user_info_list_image_view_black_listed_icon_title".localized :
+                            "user_info_list_image_view_non_black_listed_icon_title".localized)
                         .foregroundColor(isUserBlackListed ? .red : .green)
                 }
         }
+    }
+    
+    // MARK: - Constants
+    private enum Constants {
+        static let imageHeight = 80.0
+        static let imageWidth = 80.0
+        static let imageCornerRadius = 5.0
     }
 }
 

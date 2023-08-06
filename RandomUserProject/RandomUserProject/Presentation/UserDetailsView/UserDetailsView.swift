@@ -17,28 +17,36 @@ struct UserDetailsView: View {
                     WebImage(url: URL(string: imageURL))
                         .resizable()
                         .placeholder(Image(systemName: "face.smiling"))
-                        .frame(maxWidth: geometry.size.width * 0.4, maxHeight: geometry.size.height * 0.3)
-                        .cornerRadius(5)
+                        .frame(maxWidth: geometry.size.width * Constants.imageWidthRatio,
+                               maxHeight: geometry.size.height * Constants.imageHeightRatio)
+                        .cornerRadius(Constants.imageCornerRadius)
                         .padding()
                         .clipped()
                 }
                 VStack(alignment: .leading) {
                     
-                    UserDetailsLabelView(labelTitle: "Name",
+                    UserDetailsLabelView(labelTitle: "user_details_view_name_label_title".localized,
                                          labelContent: userInfo.name?.userFullName ?? "")
-                    UserDetailsLabelView(labelTitle: "Username",
+                    UserDetailsLabelView(labelTitle: "user_details_view_username_label_title".localized,
                                          labelContent: userInfo.username ?? "")
-                    UserDetailsLabelView(labelTitle: "Email",
+                    UserDetailsLabelView(labelTitle: "user_details_view_email_label_title".localized,
                                          labelContent: userInfo.email ?? "")
-                    UserDetailsLabelView(labelTitle: "Phone",
+                    UserDetailsLabelView(labelTitle: "user_details_view_phone_label_title".localized,
                                          labelContent: userInfo.phone ?? "")
                 }
                 Spacer()
             }
-            .navigationTitle("User Details")
+            .navigationTitle("user_details_view_navigation_title".localized)
             .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+    }
+    
+    // MARK: - Constants
+    private enum Constants {
+        static let imageHeightRatio = 0.25
+        static let imageWidthRatio = 0.4
+        static let imageCornerRadius = 5.0
     }
 }
 
