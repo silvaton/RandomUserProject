@@ -40,13 +40,12 @@ struct UserInfoListView: View {
                         List {
                             ForEach(filteredUsers, id: \.id) { user in
                                 NavigationLink {
-                                    EmptyView()
+                                    UserDetailsView(userInfo: user)
                                 } label: {
                                     HStack{
                                         if let imageUrl = user.profilePicture?.defaultImageUrl {
                                             WebImage(url: URL(string: imageUrl))
                                                 .resizable()
-                                                .placeholder(Image(systemName: "face.smiling"))
                                                 .frame(width: 80,height: 80)
                                                 .clipped()
                                                 .cornerRadius(5)
@@ -85,7 +84,6 @@ struct UserInfoListView: View {
                             } label: {
                                 Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
                             }
-
                         }
                     }
                 }

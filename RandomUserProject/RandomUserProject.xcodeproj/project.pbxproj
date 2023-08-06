@@ -26,6 +26,7 @@
 		3CA4C6442A7EA54800CD3426 /* UserInfoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C6432A7EA54800CD3426 /* UserInfoListViewModel.swift */; };
 		3CA4C6462A7EADE800CD3426 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C6452A7EADE800CD3426 /* SearchBarView.swift */; };
 		3CA4C6492A7FA17F00CD3426 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3CA4C6482A7FA17F00CD3426 /* SDWebImageSwiftUI */; };
+		3CA4C64D2A7FABF400CD3426 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4C64C2A7FABF400CD3426 /* UserDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		3CA4C63B2A7E81FA00CD3426 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3CA4C6432A7EA54800CD3426 /* UserInfoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoListViewModel.swift; sourceTree = "<group>"; };
 		3CA4C6452A7EADE800CD3426 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		3CA4C64C2A7FABF400CD3426 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				3CA4C60E2A7E533F00CD3426 /* UserInfoListView.swift */,
+				3CA4C64C2A7FABF400CD3426 /* UserDetailsView.swift */,
 				3CA4C6452A7EADE800CD3426 /* SearchBarView.swift */,
 				3CA4C6432A7EA54800CD3426 /* UserInfoListViewModel.swift */,
 			);
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA4C64D2A7FABF400CD3426 /* UserDetailsView.swift in Sources */,
 				3CA4C63C2A7E81FA00CD3426 /* Network.swift in Sources */,
 				3CA4C6322A7E6D3A00CD3426 /* ImageModel.swift in Sources */,
 				3CA4C6292A7E67D600CD3426 /* UserMapper.swift in Sources */,
