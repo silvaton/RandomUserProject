@@ -16,7 +16,7 @@ class UserInfoListViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var shouldReloadData = true
         
-    private let network = Network()
+    var network = Network()
     
     func fetchData() {
         if shouldReloadData {
