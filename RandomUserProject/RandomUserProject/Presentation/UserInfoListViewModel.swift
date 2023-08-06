@@ -25,7 +25,12 @@ class UserInfoListViewModel: ObservableObject {
             switch result {
             case .success(let users):
                 DispatchQueue.main.async {
-                    self.users = users
+                    self.users = users.sorted { (user1, user2) -> Bool in
+                        // Sort based on the user's name (firstName + lastName)
+                        let name1 = (user1.name?.firstName ?? "") + (user1.name?.lastName ?? "")
+                        let name2 = (user2.name?.firstName ?? "") + (user2.name?.lastName ?? "")
+                        return name1 < name2
+                    }
                     self.errorMessage = ""
                 }
             case .failure(let error):

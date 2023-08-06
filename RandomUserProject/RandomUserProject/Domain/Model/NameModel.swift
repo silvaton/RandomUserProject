@@ -20,4 +20,8 @@ public struct NameModel: Decodable, CustomStringConvertible {
         return "NameModel(firstName: \(firstName ?? ""), lastName: \(lastName ?? ""))"
     }
     
+    var userFullName: String {
+        return "\(firstName ?? "") \(lastName ?? "")"
+    }
+    
 }

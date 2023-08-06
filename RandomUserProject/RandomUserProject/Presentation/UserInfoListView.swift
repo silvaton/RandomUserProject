@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct UserInfoListView: View {
     @StateObject private var viewModel = UserInfoListViewModel()
     @State private var searchText = ""
@@ -40,8 +41,24 @@ struct UserInfoListView: View {
                                 NavigationLink {
                                     EmptyView()
                                 } label: {
-                                    HStack {
-                                        Text(user.name?.firstName ?? "")
+                                    HStack{
+                                        Label("", systemImage: "face.smiling")
+                                        VStack(alignment: .leading) {
+                                            HStack {
+                                                Text("Name:")
+                                                Text(user.name?.userFullName ?? "")
+                                            }
+                                            HStack {
+                                                Text("Email:")
+                                                Text(user.email ?? "")
+                                            }
+                                            HStack {
+                                                Text("Phone:")
+                                                Text(user.phone ?? "")
+                                            }
+                                            
+                                        }
+                                        
                                     }
                                 }
 
