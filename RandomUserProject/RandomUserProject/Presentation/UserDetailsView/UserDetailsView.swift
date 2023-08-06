@@ -23,25 +23,20 @@ struct UserDetailsView: View {
                         .clipped()
                 }
                 VStack(alignment: .leading) {
-                    HStack {
-                        Text("Name:")
-                        Text(userInfo.name?.userFullName ?? "")
-                    }
-                    HStack {
-                        Text("Username:")
-                        Text(userInfo.username ?? "")
-                    }
-                    HStack {
-                        Text("Email:")
-                        Text(userInfo.email ?? "")
-                    }
-                    HStack {
-                        Text("Phone:")
-                        Text(userInfo.phone ?? "")
-                    }
+                    
+                    UserDetailsLabelView(labelTitle: "Name",
+                                         labelContent: userInfo.name?.userFullName ?? "")
+                    UserDetailsLabelView(labelTitle: "Username",
+                                         labelContent: userInfo.username ?? "")
+                    UserDetailsLabelView(labelTitle: "Email",
+                                         labelContent: userInfo.email ?? "")
+                    UserDetailsLabelView(labelTitle: "Phone",
+                                         labelContent: userInfo.phone ?? "")
                 }
                 Spacer()
             }
+            .navigationTitle("User Details")
+            .navigationBarTitleDisplayMode(.inline)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
