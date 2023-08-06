@@ -27,15 +27,7 @@ class UserInfoListViewModel: ObservableObject {
                 
                 switch result {
                 case .success(let users):
-                    DispatchQueue.main.async {
-                        self.users = users.sorted { (user1, user2) -> Bool in
-                            // Sort based on the user's name (firstName + lastName)
-                            let name1 = (user1.name?.firstName ?? "") + (user1.name?.lastName ?? "")
-                            let name2 = (user2.name?.firstName ?? "") + (user2.name?.lastName ?? "")
-                            return name1 < name2
-                        }
-                        self.errorMessage = ""
-                    }
+                    updateUsersData(users: users)
                 case .failure(let error):
                     self.users = []
                     if let errorInfo = error as NSError?, let message = errorInfo.userInfo[NSLocalizedDescriptionKey] as? String {
@@ -45,6 +37,30 @@ class UserInfoListViewModel: ObservableObject {
                     }
                 }
             }
+        }
+    }
+    
+    private func updateUsersData(users: [UserModel]) {
+        var uniqueUsers: [String: UserModel] = [:]
+        
+        for user in users {
+            if let userId = user.id {
+                if uniqueUsers[userId] == nil {
+                    uniqueUsers[userId] = user
+                }
+            }
+        }
+        
+        let sortedUsers = uniqueUsers.values.sorted { (user1, user2) -> Bool in
+            // Sort based on the user's name (firstName + lastName)
+            let name1 = (user1.name?.firstName ?? "") + (user1.name?.lastName ?? "")
+            let name2 = (user2.name?.firstName ?? "") + (user2.name?.lastName ?? "")
+            return name1 < name2
+        }
+
+        DispatchQueue.main.async {
+            self.users = sortedUsers
+            self.errorMessage = ""
         }
     }
     
