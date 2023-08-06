@@ -43,13 +43,8 @@ struct UserInfoListView: View {
                                     UserDetailsView(userInfo: user)
                                 } label: {
                                     HStack{
-                                        if let imageUrl = user.profilePicture?.defaultImageUrl {
-                                            WebImage(url: URL(string: imageUrl))
-                                                .resizable()
-                                                .frame(width: 80,height: 80)
-                                                .clipped()
-                                                .cornerRadius(5)
-                                        }
+                                        UserInfoListImageView(user: user,
+                                                              isUserBlackListed: viewModel.isUserBlackListed(userID: user.id ?? ""))
                                         VStack(alignment: .leading) {
                                             HStack {
                                                 Text("Name:")
