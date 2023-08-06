@@ -37,7 +37,14 @@ struct UserInfoListView: View {
                         SearchBarView(searchText: $searchText)
                         List {
                             ForEach(filteredUsers, id: \.id) { user in
-                                Text(user.name?.firstName ?? "")
+                                NavigationLink {
+                                    EmptyView()
+                                } label: {
+                                    HStack {
+                                        Text(user.name?.firstName ?? "")
+                                    }
+                                }
+
                             }
                             .onDelete(perform: onDelete)
                         }
