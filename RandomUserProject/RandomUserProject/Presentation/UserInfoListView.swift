@@ -80,6 +80,7 @@ struct UserInfoListView: View {
                         
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button {
+                                viewModel.shouldReloadData = true
                                 viewModel.fetchData()
                             } label: {
                                 Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
