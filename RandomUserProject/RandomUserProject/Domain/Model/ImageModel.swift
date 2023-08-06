@@ -19,4 +19,16 @@ public struct ImageModel: Decodable {
         self.mediumSize = mediumSize
         self.thumbnail = thumbnail
     }
+    
+    public var defaultImageUrl: String {
+        if let defaultImage = largeSize {
+            return defaultImage
+        } else if let defaultImage = mediumSize {
+            return defaultImage
+        } else if let defaultImage = thumbnail {
+            return defaultImage
+        } else {
+            return ""
+        }
+    }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 
 struct UserInfoListView: View {
@@ -42,7 +43,14 @@ struct UserInfoListView: View {
                                     EmptyView()
                                 } label: {
                                     HStack{
-                                        Label("", systemImage: "face.smiling")
+                                        if let imageUrl = user.profilePicture?.defaultImageUrl {
+                                            WebImage(url: URL(string: imageUrl))
+                                                .resizable()
+                                                .placeholder(Image(systemName: "face.smiling"))
+                                                .frame(width: 80,height: 80)
+                                                .clipped()
+                                                .cornerRadius(5)
+                                        }
                                         VStack(alignment: .leading) {
                                             HStack {
                                                 Text("Name:")
@@ -56,15 +64,14 @@ struct UserInfoListView: View {
                                                 Text("Phone:")
                                                 Text(user.phone ?? "")
                                             }
-                                            
                                         }
-                                        
                                     }
                                 }
-
+                                .listRowSeparator(.hidden)
                             }
                             .onDelete(perform: onDelete)
                         }
+
                     }
                     .navigationTitle("Users List")
                     .toolbar {
